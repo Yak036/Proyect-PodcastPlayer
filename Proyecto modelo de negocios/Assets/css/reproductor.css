@@ -1,0 +1,364 @@
+/*general */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+
+}
+body {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #303030;
+}
+/* general del logo y menu es mas que todo el fondo y cuadrar las cosas */
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background: #171717;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+/* menu */
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+/* boton de barra lateral */
+
+.botonVar{
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: 0.2s;
+}
+.botonVar:hover{
+    background-color: rgba(255, 255, 255, 0.425);
+    transition: 0.2s;
+}
+.botonVar .fa-bars{
+    font-size: 30px;
+    color: #1ee92f;
+    transition: 0.5s;
+}
+.botonVar .giro{
+    transform: rotate(90deg);
+}
+
+/* letras */
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.navbar a:hover {
+    background: #1ee92f;
+    transition: 0.5s;
+}
+/* la clase para desplegar el menu */
+.desplegado{
+    position: fixed;
+    top: 63px;
+    background-color: #171717;
+    width: 20em;
+    height: 100%;
+    padding-top: 30px;
+    color: aliceblue;
+    box-shadow: 30px 30px 30px 30px rgba(0, 0, 0, 0.356);
+    transition: 0.5s;
+}
+#menuDesplegable img{
+    width: 9em;
+    height: 9em;
+ 
+}
+/* la clase para ocultarlo */
+.guardado{
+    position: fixed;
+    top: 63px;
+    background-color: #171717;
+    width: 20em;
+    height: 100%;
+    padding-top: 30px;
+    transition: 0.5s;
+    translate: -20em;
+    color: aliceblue;
+}
+/* informacion del usuario y datos dentro del menu desplegable */
+.info{
+    margin-top: 20px;
+}
+.info h2{
+    cursor: pointer;
+    transition: 0.2s;
+}
+.info h2:hover{
+    color: #1ee92f;
+    transition: 0.2s;
+}
+.separacion{
+    width: 80%;
+    height: 1px;
+    margin-left: 10%;
+    background-color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Buscador de musicas */
+.Buscador{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+#buscador{
+    height: 2em;
+    width: 60vh;
+    background-color: transparent;
+    border: 1px solid #1ee92f;
+    color: aliceblue;
+    outline: none;
+    font-size: 2vh;
+    padding-left: 10px;
+}
+#buscador::placeholder{
+    text-align: center;
+}
+
+.btnBuscador{
+    width: 3em;
+    height: 2.11em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: 0.2s;
+}
+.btnBuscador:hover{
+    background-color: rgba(128, 128, 128, 0.356);
+    border-top-right-radius: 30px;
+    transition: 0.2s;
+}
+.fa-magnifying-glass{
+    font-size: 20px;
+    color: #1ee92f;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/* reproductor de musica */
+.sau {
+    position: relative;
+    top: 15vh;
+ 
+    height: 80vh;
+}
+
+
+.box-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.sau h2{
+    margin-top: 5vh;
+    font-size: 2vh;
+    color: aliceblue;
+}
+.sau p{
+    font-size: 2vh;
+    color: #00FF00;
+    text-transform: inherit;
+}
+
+.box-container .box {
+
+    height: auto;
+    width: 60vh;
+    
+    background: #171717;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+    transition: 0.5s;
+    position: relative;
+    padding: 10px;
+}
+
+/* Aqui esta el texto q tiene la duracion del audio */
+.audioDuration{
+    margin-top: 5vh;
+    display: flex;
+    width: 100%;
+    font-size: 6vh;
+    font-weight: 600;
+    color: #1ee92f;
+    letter-spacing: 1px;
+}
+#start, #end{
+    flex: 1;
+}
+
+/* Aqui son los estilos del Input de tipo Range */
+.progreso1 {
+    height: 35px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 90%;
+    background-color: transparent;
+  }
+#progreso:focus {
+    outline: none;
+  }
+#progreso::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 9px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 2px 2px 1px #248F24;
+    background: #29FF5B;
+    border-radius: 18px;
+    border: 1px solid #0C4503;
+  }
+#progreso::-webkit-slider-thumb {
+    box-shadow: 2px 2px 1px #003302;
+    border: 3px solid #00FF00;
+    height: 24px;
+    width: 29px;
+    border-radius: 7px;
+    background: #0D4000;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -9.5px;
+  }
+#progreso:focus::-webkit-slider-runnable-track {
+    background: #29FF5B;
+  }
+#progreso::-moz-range-track {
+    width: 100%;
+    height: 9px;
+    cursor: pointer;
+    transition: 0.2;
+    box-shadow: 2px 2px 1px #248F24;
+    background: #29FF5B;
+    border-radius: 18px;
+    border: 1px solid #0C4503;
+  }
+#progreso::-moz-range-thumb {
+    box-shadow: 2px 2px 1px #003302;
+    border: 3px solid #00FF00;
+    height: 24px;
+    width: 29px;
+    border-radius: 7px;
+    background: #0D4000;
+    cursor: pointer;
+  }
+#progreso::-ms-track {
+    width: 100%;
+    height: 9px;
+    cursor: pointer;
+    transition: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+#progreso::-ms-fill-lower {
+    background: #29FF5B;
+    border: 1px solid #0C4503;
+    border-radius: 36px;
+    box-shadow: 2px 2px 1px #248F24;
+  }
+#progreso::-ms-fill-upper {
+    background: #29FF5B;
+    border: 1px solid #0C4503;
+    border-radius: 36px;
+    box-shadow: 2px 2px 1px #248F24;
+  }
+#progreso::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 2px 2px 1px #003302;
+    border: 3px solid #00FF00;
+    height: 24px;
+    width: 29px;
+    border-radius: 7px;
+    background: #0D4000;
+    cursor: pointer;
+  }
+#progreso:focus::-ms-fill-lower {
+    background: #29FF5B;
+  }
+#progreso:focus::-ms-fill-upper {
+    background: #29FF5B;
+  }
+/* range para controlar el volumen */
+.volumen{
+    height: 30px;
+    -webkit-appearance: none;
+    margin-top: 3vh;
+    width: 10vh;
+    max-width: 250px;
+    background-color: transparent;
+    rotate: -90deg;
+    position: absolute;
+}
+
+/* botone de Play */
+.box-container .box i {
+    width: 10vh;
+    line-height: 10vh;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    background: #1ee92f;
+    font-size: 5vh;
+
+    cursor: pointer;
+    transition: 0.1;
+    user-select: none;
+    transition: 0.5s;
+}
+.box-container .box i:active{
+    transition: 0.1s;
+    background-color: red;
+}
+.box-container .box .aparecer{
+    display: flexbox;
+}
+.box-container .box .desaparecer{
+    display: none;
+}
+
+.box-container .box h3 {
+    text-transform: capitalize;
+    font-size: 20vh;
+    color: #1ee92f;
+}
+.box-container .caratula{
+    min-width: 20vh;
+    width: 40vh;
+    height: 35vh;
+    border-radius: 10%;
+    margin: 2vh;
+}

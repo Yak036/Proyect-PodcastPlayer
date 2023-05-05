@@ -1,0 +1,382 @@
+/*general */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+
+}
+body {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #303030;
+}
+/* general del logo y menu es mas que todo el fondo y cuadrar las cosas */
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background: #171717;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+/* menu */
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+/* logo */
+.logo {
+    margin-left: 30px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+#iujologo{
+    width: 300px;
+}
+/* letras */
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.navbar a:hover {
+    background: #1ee92f;
+    transition: 0.5s;
+}
+/* imagen del principio */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: no-repeat center;
+    background-image:linear-gradient(rgba(255, 255, 255, 0.246)1%,rgba(0, 0, 0, 0.087)20%,92%,rgb(1, 1, 1)20%,rgb(255, 255, 255)140%), url(../IMG/imagendefondo.jpeg);
+    background-size: cover;
+
+}
+
+/* titulos */
+.titulos{
+    width: 100%;
+    margin-top: 30vh;
+}
+.title {
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 2px black;
+}
+
+/* parrafos */
+p {
+    margin-bottom: 40px;
+    font-size: 30px;
+    color: #fff;
+    padding: 0 150px;
+    text-transform: capitalize;
+    font-style: italic;
+}
+/*boton */
+.btno {
+    display: inline-block;
+    margin-top: 15vh;
+    padding: 10px 40px;
+    border: 2px solid #1ee92f;
+    color: #fff;
+    text-decoration: none;
+    background: #1ee92f;
+    transition: 0.5s;
+    z-index: 1;
+}
+/*color del boton cuando pasa el mouse por encima */
+.btno:hover {
+    transition: 0.5s;
+    background: black;
+}
+
+.content {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* empieza la parte de las canciones */
+.sau {
+    position: relative;
+    background: #303030;
+    height: 80vh;
+}
+
+
+.box-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 100px;
+}
+.sau h2{
+    margin-top: 20px;
+}
+
+.box-container .box {
+
+    height: auto;
+    width: 270px;
+    background: #171717;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+    margin: 20px;
+    transition: 0.5s;
+    position: relative;
+    padding: 10px;
+}
+.box-container .box:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+/* Aqui esta el texto q tiene la duracion del audio */
+.audioDuration{
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 600;
+    color: #1ee92f;
+    letter-spacing: 1px;
+}
+#start, #end{
+    flex: 1;
+}
+
+/* Aqui son los estilos del Input de tipo Range */
+#progreso {
+    height: 35px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 80%;
+    background-color: transparent;
+  }
+#progreso:focus {
+    outline: none;
+  }
+#progreso::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 9px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 2px 2px 1px #248F24;
+    background: #29FF5B;
+    border-radius: 18px;
+    border: 1px solid #0C4503;
+  }
+#progreso::-webkit-slider-thumb {
+    box-shadow: 2px 2px 1px #003302;
+    border: 3px solid #00FF00;
+    height: 24px;
+    width: 29px;
+    border-radius: 7px;
+    background: #0D4000;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -9.5px;
+  }
+#progreso:focus::-webkit-slider-runnable-track {
+    background: #29FF5B;
+  }
+#progreso::-moz-range-track {
+    width: 100%;
+    height: 9px;
+    cursor: pointer;
+    transition: 0.2;
+    box-shadow: 2px 2px 1px #248F24;
+    background: #29FF5B;
+    border-radius: 18px;
+    border: 1px solid #0C4503;
+  }
+#progreso::-moz-range-thumb {
+    box-shadow: 2px 2px 1px #003302;
+    border: 3px solid #00FF00;
+    height: 24px;
+    width: 29px;
+    border-radius: 7px;
+    background: #0D4000;
+    cursor: pointer;
+  }
+#progreso::-ms-track {
+    width: 100%;
+    height: 9px;
+    cursor: pointer;
+    transition: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+#progreso::-ms-fill-lower {
+    background: #29FF5B;
+    border: 1px solid #0C4503;
+    border-radius: 36px;
+    box-shadow: 2px 2px 1px #248F24;
+  }
+#progreso::-ms-fill-upper {
+    background: #29FF5B;
+    border: 1px solid #0C4503;
+    border-radius: 36px;
+    box-shadow: 2px 2px 1px #248F24;
+  }
+#progreso::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 2px 2px 1px #003302;
+    border: 3px solid #00FF00;
+    height: 24px;
+    width: 29px;
+    border-radius: 7px;
+    background: #0D4000;
+    cursor: pointer;
+  }
+#progreso:focus::-ms-fill-lower {
+    background: #29FF5B;
+  }
+#progreso:focus::-ms-fill-upper {
+    background: #29FF5B;
+  }
+  
+/* botones de Play */
+.box-container .box i {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+    background: #1ee92f;
+    font-size: 25px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.1;
+    user-select: none
+}
+.box-container .box i:active{
+    transition: 0.1s;
+    background-color: red;
+}
+
+.box-container .box h3 {
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #1ee92f;
+}
+.box-container .caratula{
+    min-width: 40px;
+    width: 200px;
+    height: 200px;
+    border-radius: 30%;
+}
+/* Ojito ver mas */
+.box-container .ojito{
+    margin-top: 30px;
+    width: 100%;
+    height: 10vh;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+}
+
+.box-container #eye{
+    font-size: 50px;
+    width: 80px;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+.box-container .texEye{
+    font-size: 40px;
+    position: relative;
+    cursor: hand;
+    text-decoration: none;
+    color: black;
+    display: block;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* parte de integrantes */
+.box-container .box p {
+    padding: 0 15px;
+    font-size: 16px;
+}
+.about {
+    background: #303030;
+    padding: 80px 0;
+}
+.about .title{
+    margin-top: 30vh;
+}
+.box-container2{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    flex-wrap: wrap;
+}
+/* fondo */
+.box-container2 .box {
+    width: 250px;
+    padding-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
+    background: #171717;
+    margin: 20px 20px;
+}
+/* circulos */
+.box-container2 .box img {
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -50px;
+    border: 6px solid #1ee92f;
+}
+/* nombres de integrantes */
+.box-container2 .box h3 {
+    font-size: 20px;
+    color: #1ee92f;
+    padding-top: 10px;
+}
+/* descripcion de integrantes */
+.box-container2 .box p {
+
+    font-size: 18px;
+    color: #fff;
+    padding: 0;
+}
+/* decoracion de la extrellas */
+.box-container2 .box .stars i {
+    font-size: 15px;
+    color: #e5ff00;
+}
+/* contactos */
+.contact {
+    padding: 50px 0;
+    background: linear-gradient(black -40%,#171717 30%);
+    margin-top: 10vh;
+}
+

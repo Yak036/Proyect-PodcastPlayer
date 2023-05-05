@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="Assets/IMG/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <title>AllStarMusic</title>
+</head>
+<body>
+
+   <div class="head">
+        <!--aqui debe ir una imagen-->
+        <div class="logo">
+            <a href="https://aulaccs.iujoac.org.ve/"><img src="Assets/IMG/IUJO.jpg" id="iujologo"></a>
+        </div>
+        <!--menu-->
+        <nav class="navbar">
+            <a href="#" class="inicio" id="inicio">Inicio</a>
+            <a href="iniciarSecion.html">Iniciar sesión</a>
+            <a href="registrarse.html">Registrate</a>
+            <a href="inicio.html">Acceso publico (temporal)</a>
+        </nav>
+
+   </div>
+
+        <!--introduccion-->
+   <header class="content header">
+       <p> 
+       </p>
+       <a href="#" class="btno">Saber mas</a>
+   </header>
+
+    <!--aqui es donde estan las musicas-->
+   <section class="content sau">
+        <div class="box-container">
+            <div class="titulos">
+                <h2 class="title">Musicas</h2>
+                <p>Mas populares: </p>
+            </div>
+ <!--primera cancion --> 
+            <div class="box">
+                <h3 class="cancion1" id="cancion"></h3>
+                <p class="artista1" id="artista"></p>
+                <div class="caratulaContainer">
+                    <img class="caratula" src="Assets/IMG/Caratulas de musica/HotGirl.jpg" alt="">
+                </div>
+                <div class="audioDuration">
+                    <div class="start1" id="start">00:00</div>
+                    <div class="end1" id="end">00:00</div>
+                </div>
+                <input type="range" min="0" max="160" step="0.1" class="progreso1" value="0"id="progreso">
+                <i class="fa-sharp fa-solid fa-play" id="playPause1"></i>
+            </div>
+<!-- segunda cancion -->
+            <div class="box">
+                <h3 class="cancion2" id="cancion"></h3>
+                <p class="artista2" id="artista"></p>
+                <div class="caratulaContainer">
+                    <img class="caratula" src="Assets/IMG/Caratulas de musica/HourseogMemories.jpg" alt="">
+                </div>
+                <div class="audioDuration">
+                    <div class="start2" id="start">00:00</div>
+                    <div class="end2" id="end">00:00</div>
+                </div>
+                <input type="range" min="0" max="160" step="0.1" class="progreso2" value="0" id="progreso">
+                <i class="fa-sharp fa-solid fa-play" id="playPause2"></i>
+            </div>
+<!-- tercera cancion -->
+            <div class="box">
+                <h3 class="cancion3" id="cancion"></h3>
+                <p class="artista3" id="artista"></p>
+                <div class="caratulaContainer">
+                    <img class="caratula" src="Assets/IMG/Caratulas de musica/maryOnACross.jpg" alt=''>
+                </div>
+                <div class="audioDuration">
+                    <div class="start3" id="start">00:00</div>
+                    <div class="end3" id="end">00:00</div>
+                </div>
+                <input type="range" min="0" max="160" step="0.1" class="progreso3" value="0" id="progreso">
+                <i class="fa-sharp fa-solid fa-play" id="playPause3"></i>
+            </div>
+            <!-- Ojito -->
+            <div class="ojito">
+                <i class="fa-solid fa-eye fa-bounce" style="color: #000000;" id="eye"></i>
+                <p class="texEye" href="#">Ver planes</p>
+            </div>
+        </div>
+   </section>
+        <!--informacion de los integrantes-->
+   <section class="content about">
+        <h2 class="title">Nosotros</h2>
+        <p>los participantes son: 
+        </p>
+        <div class="box-container2">
+            <div class="box">
+                <img src="Assets/IMG/Integrantes/Ramces.jpeg" alt="">
+                <h3>Ramces Vera</h3>
+                <p>JavaScript</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+
+            <div class="box">
+                <img src="Assets/IMG/Integrantes/Jesus.jpeg" alt="">
+                <h3>Jesus Teixeira</h3>
+                <p>HTML y CSS</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="Assets/IMG/Integrantes/andrea.jpg" alt="">
+                <h3>Yanin Colmenares</h3>
+                <p>HTML y CSS</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+        </div>
+        
+   </section>
+        <!--para contactarnos-->
+   <section class="content contact">
+        <h2 class="title">Contactanos</h2>
+
+        <div class="footer-section">
+
+            <div>
+                <p>04140274248</p>
+            </div>
+   </section>
+
+   <script src="Assets/JS/functionindex.js"></script>
+</body>
+</html>

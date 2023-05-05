@@ -1,0 +1,223 @@
+/*general */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+
+}
+body {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #303030;
+}
+/* general del logo y menu es mas que todo el fondo y cuadrar las cosas */
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    background: #171717;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+/* menu */
+.navbar {
+    display: flex;
+    margin-right: 10px;
+}
+/* boton de barra lateral */
+
+.botonVar{
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: 0.2s;
+}
+.botonVar:hover{
+    background-color: rgba(255, 255, 255, 0.425);
+    transition: 0.2s;
+}
+.botonVar .fa-bars{
+    font-size: 30px;
+    color: #1ee92f;
+    transition: 0.5s;
+}
+.botonVar .giro{
+    transform: rotate(90deg);
+}
+
+/* letras */
+.navbar a {
+    display: block;
+    padding: 20px 20px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.navbar a:hover {
+    background: #1ee92f;
+    transition: 0.5s;
+}
+/* la clase para desplegar el menu */
+.desplegado{
+    position: fixed;
+    top: 63px;
+    background-color: #171717;
+    width: 20em;
+    height: 100%;
+    padding-top: 30px;
+    color: aliceblue;
+    box-shadow: 30px 30px 30px 30px rgba(0, 0, 0, 0.356);
+    transition: 0.5s;
+}
+#menuDesplegable img{
+    width: 9em;
+    height: 9em;
+ 
+}
+/* la clase para ocultarlo */
+.guardado{
+    position: fixed;
+    top: 63px;
+    background-color: #171717;
+    width: 20em;
+    height: 100%;
+    padding-top: 30px;
+    transition: 0.5s;
+    translate: -20em;
+    color: aliceblue;
+}
+/* informacion del usuario y datos dentro del menu desplegable */
+.info{
+    margin-top: 20px;
+}
+.info h2{
+    cursor: pointer;
+    transition: 0.2s;
+}
+.info h2:hover{
+    color: #1ee92f;
+    transition: 0.2s;
+}
+.separacion{
+    width: 80%;
+    height: 1px;
+    margin-left: 10%;
+    background-color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Buscador de musicas */
+.Buscador{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+#buscador{
+    height: 2em;
+    width: 60vh;
+    background-color: transparent;
+    border: 1px solid #1ee92f;
+    color: aliceblue;
+    outline: none;
+    font-size: 2vh;
+    padding-left: 10px;
+}
+#buscador::placeholder{
+    text-align: center;
+}
+
+.btnBuscador{
+    width: 3em;
+    height: 2.11em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: 0.2s;
+}
+.btnBuscador:hover{
+    background-color: rgba(128, 128, 128, 0.356);
+    border-top-right-radius: 30px;
+    transition: 0.2s;
+}
+.fa-magnifying-glass{
+    font-size: 20px;
+    color: #1ee92f;
+    
+}
+
+main{
+    position: relative;
+    top: 60px;
+    color: aliceblue;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+main section{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.356);
+    width: 70em;
+}
+section .musicPreview{
+    background-color: #171717;
+    height: 45vh;
+    width: 40vh;
+    padding: 1vh;
+    margin-bottom: 2vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    margin-top: 4vh;
+}
+#musicContainer{
+    display: none;
+}
+section .musicPreview h3{
+    font-size: 2vh;
+    width: 40vh;
+    
+}
+section .musicPreview p{
+    font-size: 1.8vh;
+    margin-top: 1vh;
+    color: #1ee92f;
+    text-transform: capitalize;
+    font-style: italic;
+}
+section .musicPreview img{
+    height: 25vh;
+    width: 30vh;
+    margin-top:3vh;
+    margin-bottom: 2vh;
+}
+#loading{
+    display: flex;
+    position: fixed;
+    top: 30vh;
+    left: 70vh;
+}
+.animacion{
+  
+    width: 100%;
+    height: 8vh;
+    display: flex;
+}
+.prueba{
+    width: 8vh;
+    height: 100%;
+}
+
