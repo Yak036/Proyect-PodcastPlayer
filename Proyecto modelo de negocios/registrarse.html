@@ -1,31 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="shortcut icon" href="Assets/IMG/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Assets/IMG/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="Assets//css/registro.css">
-    <title>AllStarMusic - Registrarse</title>
+    <title>HablandoClaro - Registrarse</title>
 </head>
 <body>
-    <form class="container">
-        <div class="questContainer">
-            <h1>Registrarse</h1>
-            <h2>Nombre y Apellido</h2>
-            <input type="text" class="quest nombre" placeholder="Ejm. Eduardo Torres">
-            <h2>Nombre de usuario</h2>
-            <input type="text" class="quest userName" placeholder="Ejm. Edu_Torres">
-            <h2>Correo electronico</h2>
-            <input type="text" class="quest gmail" placeholder="Ejm. nombre@gmail.com">
-            <h2>Contraseña</h2>
-            <input type="password" class="quest password" placeholder="**********">
-            <h2>Confirmar contraseña</h2>
-            <input type="password" class="quest password confir" placeholder="**********">
-            <input type="button" class="questbtn" value="Registrarse">
-        </div>
-    </form>
+        <form class="container">
+            <div class="questContainer">
+                <h1>Registrarse</h1>
+                <h2>Nombre y Apellido</h2>
+                <input name="nombreApellido" type="text" class="quest nombre" placeholder="Ejm. Eduardo Torres">
+                <ul><li>El nombre y apellido deben de estar en Mayúscula</li><li>Nada mas puedes colocar un nombre y un apellido</li></ul>
+                <h2>Nombre de usuario</h2>
+                <input name="nombreUsuario" type="text" class="quest userName" placeholder="Ejm. Edu_Torres">
+                <ul><li>Debe tener mínimo 4 caracteres y máximo 20</li></ul>
+                <h2>Correo electrónico</h2>
+                <input name="gmail" type="text" class="quest gmail" placeholder="Ejm. nombre@gmail.com">
+                <ul><li>Correo electrónico invalido</li></ul>
+                <h2>Contraseña</h2>
+                <input name="password" type="password" class="quest password" placeholder="**********">
+                <ul><li>Debe tener mínimo 5 caracteres y máximo 40</li><li>Debe tener almenos un signo:_/.?@</li></ul>
+                <h2>Confirmar contraseña</h2>
+                <input type="password" class="quest password confir" placeholder="**********">
+                <ul><li>Las contraseñas no coinciden</li></ul>
+                <input type="button" class="questbtn" value="Registrarse">
+            </div>
+        </form>
+    
+    <script src="Assets/JS/registro.js"></script>
+
 </body>
 </html>

@@ -10,9 +10,8 @@ let loading = document.querySelector("#loading")
 
 const musicContainer = document.querySelector('#musicContainer')
 let music = document.createElement("div")
-APIsearch = async(busqueda)=>{
-    
-        //con la funcion asyncrona y la etiqueta try
+APIsearch = async(busqueda = "Podcast")=>{
+        //con la funcion asíncrona y la etiqueta try
     //se esperara la respuesta de la API
     //try significa si la respuesta tiene exito la llamara
     try{
@@ -21,18 +20,18 @@ APIsearch = async(busqueda)=>{
             maxResults: 30,
             key: 'AIzaSyDNVV8AOJyXxUGl1KO1HUNWjDL0cjkhiWE',
             part: 'snippet',
-            q:      busqueda,
+            q: busqueda,
             type: 'video',
             videoCategoryId: '24',
             lenguaje: 'es',
-            orden: 'viewCount'
+            orden: 'rating'
         }
-        //await espera, fetch promesa, espera la promesa que traera la api
+        //await espera, fetch promesa, espera la promesa que traerá la api
         //con el link y las caracteristicas del objeto que se creo
-        //se le dira a la API que datos traer
+        //se le dirá a la API que datos traer
         const respuesta = await fetch(`https://www.googleapis.com/youtube/v3/search?viewCount=${data.orden}&relevanceLanguage=${data.lenguaje}&videoCategoryId=${data.videoCategoryId}&part=${data.part}&type=${data.type}&q=${data.q}&maxResults=${data.maxResults}&key=AIzaSyDNVV8AOJyXxUGl1KO1HUNWjDL0cjkhiWE`);
         
-        //luego esos datos seran pasado a un formato mas facil de leer el cual es .json
+        //luego esos datos serán pasado a un formato mas fácil de leer el cual es .json
         const datos = await respuesta.json()
         
         for(let i = 0;data.maxResults>i;i++){
@@ -41,12 +40,16 @@ APIsearch = async(busqueda)=>{
             const musicContainer = document.querySelector('#musicContainer')
             let music = document.createElement("div")
             musicContainer.appendChild(music)
-            music.innerHTML=`<div class="musicPreview">
+            music.innerHTML=`
+                            <a href='reproductor.html'>
+                            <div class="musicPreview" title="${datos.items[i].snippet.title}">
                                 <img src="${datos.items[i].snippet.thumbnails.high.url}" alt="">
                                 <h3>${datos.items[i].snippet.title}</h3>
                                 <p>${datos.items[i].snippet.channelTitle}</p>
-                                <p>${datos2.items[0].contentDetails.duration.replace("PT","").replace("M","min ").replace("S","seg")}</p>
-                            </div>`
+                                <p>${datos2.items[0].contentDetails.duration.replace("PT"," ").replace("M"," min ").replace("S"," seg")}</p>
+                            </div>
+                            </a>`
+                            
         }
 
         loading.style.display="none"
@@ -62,10 +65,14 @@ APIsearch = async(busqueda)=>{
                     localStorage.setItem("URL seleccionada:",ID)
                     window.location.href='reproductor.html'
                 })
+                musicPreview[i].addEventListener("contextmenu",()=>{
+                    ID = datos.items[i].id.videoId
+                    localStorage.setItem("URL seleccionada:",ID)
+                })
             }
         }
         obtnURL()
-     
+
     }
     catch(error){
         console.log('algo salio mal')
@@ -73,12 +80,22 @@ APIsearch = async(busqueda)=>{
     }
 }
 
-APIsearch("Podcast")
+APIsearch()
 const buscador = document.querySelector("#buscador")
 const buscadorBtn = document.querySelector(".fa-magnifying-glass")
-buscadorBtn.addEventListener("click",()=>{
+
+buscadorBtn.addEventListener("click",function search(){
     loading.style.display="flex"
     musicContainer.style.display="none"
     musicContainer.innerHTML=""
     APIsearch(buscador.value)
 })
+buscador.addEventListener('keydown',function(event){
+    if(event.key ==="Enter" && buscador.value != ''){
+        loading.style.display="flex"
+        musicContainer.style.display="none"
+        musicContainer.innerHTML=""
+        APIsearch(buscador.value)
+    }
+})
+

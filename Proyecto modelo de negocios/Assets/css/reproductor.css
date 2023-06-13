@@ -20,6 +20,7 @@ body {
     height: 63px;
     background: #171717;
     position: fixed;
+    top: 0px;
     width: 100%;
     z-index: 100;
 }
@@ -167,12 +168,7 @@ body {
 
 
 /* reproductor de musica */
-.sau {
-    position: relative;
-    top: 15vh;
- 
-    height: 80vh;
-}
+
 
 
 .box-container {
@@ -182,6 +178,7 @@ body {
     flex-wrap: wrap;
     text-align: center;
     margin-bottom: 0px;
+    margin-top: 5rem;
 }
 .sau h2{
     margin-top: 5vh;
@@ -198,14 +195,13 @@ body {
 
     height: auto;
     width: 60vh;
-    
     background: #171717;
     text-align: center;
     border-radius: 20px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, .3);
     transition: 0.5s;
     position: relative;
-    padding: 10px;
+    padding: 5px;
 }
 
 /* Aqui esta el texto q tiene la duracion del audio */
@@ -213,7 +209,7 @@ body {
     margin-top: 5vh;
     display: flex;
     width: 100%;
-    font-size: 6vh;
+    font-size: 4vh;
     font-weight: 600;
     color: #1ee92f;
     letter-spacing: 1px;
@@ -224,15 +220,15 @@ body {
 
 /* Aqui son los estilos del Input de tipo Range */
 .progreso1 {
-    height: 35px;
+    height: 30px;
     -webkit-appearance: none;
     margin: 10px 0;
     width: 90%;
     background-color: transparent;
-  }
+}
 #progreso:focus {
     outline: none;
-  }
+}
 #progreso::-webkit-slider-runnable-track {
     width: 100%;
     height: 9px;
@@ -360,5 +356,53 @@ body {
     width: 40vh;
     height: 35vh;
     border-radius: 10%;
-    margin: 2vh;
+}
+
+/* carrusel */
+
+.carruselContainer{
+    background-color: #171717;
+    width: 100%;
+    height: auto;
+    margin-top: 5rem;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.carruselContainer h1{
+    color: aliceblue;
+    width: 100%;
+}
+
+ /* Personaliza el tamaño del carrusel */
+#carouselExampleCaptions {
+    width: 40vh; /* Ajusta el ancho según tus necesidades */
+    height: 30vh; /* Ajusta la altura según tus necesidades */
+}
+
+  /* Personaliza el tamaño de las imágenes del carrusel */
+.carousel-item img {
+    width: 40vh;
+    height: 30vh;
+    object-fit: cover; /* Ajusta el ajuste de la imagen según tus necesidades */
+}
+
+.carousel-caption{
+    background-color: #17171700;
+    color: rgba(240, 248, 255, 0);
+    width: 100;
+    transition: 0.2s;
+    cursor: pointer;
+    margin-bottom: 10%;
+}
+.carousel-caption:hover{
+    user-select: none;
+    background-color: #171717;
+    color: aliceblue;
+    transition: 0.2s;
+}
+.carousel-caption h5{
+    font-size: 2vh;
 }
